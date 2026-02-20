@@ -15,3 +15,5 @@ We use `npx` is to just download and run the necessary packages but not save the
 # nvm install 16
 nvm use 16
 ```
+  
+You may also wish to run your `ng` commands within the application directory using `npm run ng`. This is to ensure you are using the `ng` (Angular CLI) version that is specified in the `package.json` within the app.  
