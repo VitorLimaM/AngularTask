@@ -1,0 +1,20 @@
+.main-container {
+  height: 100vh; /* Ocupa a altura toda da tela */
+}
+
+mat-sidenav {
+  width: 250px;
+  background-color: #f5f5f5; /* Cor cinza clara do seu menu */
+  border-right: 1px solid #ddd;
+}
+
+mat-sidenav-content {
+  background-color: #555555; /* Cor cinza escura que aparece na sua imagem */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Garante que o ícone e o texto fiquem alinhados */
+.nav-caption {
+  margin-left: 10px;
+}

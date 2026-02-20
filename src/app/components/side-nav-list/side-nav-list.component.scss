@@ -1,0 +1,28 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+/* lista ocupa toda altura */
+mat-nav-list {
+  height: 100%;
+  padding-top: 8px;
+}
+
+/* itens */
+.mat-list-item {
+  height: 48px;
+  display: flex;
+  align-items: center;
+}
+
+/* texto */
+.nav-caption {
+  margin-left: 12px;
+  font-size: 15px;
+}
+
+/* hover */
+.mat-list-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}

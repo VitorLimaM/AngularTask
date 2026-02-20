@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Forca</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo da Forca</h1>
+        <div id="word-display"></div>
+        <div id="hangman-drawing"></div>
+        <input type="text" id="letter-input" maxlength="1" placeholder="Digite uma letra">
+        <button id="guess-button">Adivinhar</button>
+        <p id="message"></p>
+        <button id="reset-button">Novo Jogo</button>
+    </div>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#word-display {
+    font-size: 2em;
+    margin: 20px 0;
+    letter-spacing: 5px;
+}
+
+#hangman-drawing {
+    font-size: 3em;
+    margin: 20px 0;
+    color: red;
+}
+
+input {
+    padding: 10px;
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#message {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+    </style>
+    <script>
+        const words = ["javascript", "programacao", "computador", "internet", "algoritmo", "desenvolvimento"];
+let selectedWord = "";
+let guessedLetters = [];
+let wrongGuesses = 0;
+const maxWrong = 6;
+
+const wordDisplay = document.getElementById("word-display");
+const hangmanDrawing = document.getElementById("hangman-drawing");
+const letterInput = document.getElementById("letter-input");
+const guessButton = document.getElementById("guess-button");
+const message = document.getElementById("message");
+const resetButton = document.getElementById("reset-button");
+
+function initGame() {
+    selectedWord = words[Math.floor(Math.random() * words.length)];
+    guessedLetters = [];
+    wrongGuesses = 0;
+    updateDisplay();
+    message.textContent = "";
+    letterInput.value = "";
+    letterInput.focus();
+}
+
+function updateDisplay() {
+    let display = "";
+    for (let letter of selectedWord) {
+        if (guessedLetters.includes(letter)) {
+            display += letter + " ";
+        } else {
+            display += "_ ";
+        }
+    }
+    wordDisplay.textContent = display.trim();
+
+    // Desenho simples do enforcado (baseado em erros)
+    const drawings = ["", "O", "O-", "O-/", "O-/|", "O-/|\\", "O-/|\\"];
+    hangmanDrawing.textContent = drawings[wrongGuesses];
+}
+
+function checkGuess() {
+    const letter = letterInput.value.toLowerCase();
+    if (!letter || guessedLetters.includes(letter)) {
+        message.textContent = "Letra inválida ou já usada!";
+        return;
+    }
+
+    guessedLetters.push(letter);
+    if (selectedWord.includes(letter)) {
+        message.textContent = "Boa! Letra correta.";
+    } else {
+        wrongGuesses++;
+        message.textContent = "Errado! Tentativas restantes: " + (maxWrong - wrongGuesses);
+    }
+
+    updateDisplay();
+    letterInput.value = "";
+
+    if (wrongGuesses >= maxWrong) {
+        message.textContent = "Você perdeu! A palavra era: " + selectedWord;
+        guessButton.disabled = true;
+    } else if (selectedWord.split("").every(l => guessedLetters.includes(l))) {
+        message.textContent = "Parabéns! Você venceu!";
+        guessButton.disabled = true;
+    }
+}
+
+guessButton.addEventListener("click", checkGuess);
+letterInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") checkGuess();
+});
+resetButton.addEventListener("click", () => {
+    guessButton.disabled = false;
+    initGame();
+});
+
+initGame();
+    </script>
+</body>
+</html>

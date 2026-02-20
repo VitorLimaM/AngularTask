@@ -1,0 +1,54 @@
+/* ===== TOOLBAR ===== */
+mat-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 64px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  width: 100%;
+}
+
+/* ===== MENU LIST ===== */
+.navigation-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* itens normais (esquerda) */
+.navigation-items li {
+  margin-right: 18px;
+}
+
+/* EMPURRA os últimos itens para direita */
+.navigation-items li.spacer {
+  flex: 1;
+}
+
+/* ===== LINKS ===== */
+.navigation-items a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: 0.25s ease;
+}
+
+.navigation-items a:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* active route */
+.navigation-items a.router-link-active {
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 600;
+}

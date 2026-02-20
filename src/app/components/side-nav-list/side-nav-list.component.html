@@ -1,0 +1,31 @@
+<mat-nav-list>
+
+  <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+    <mat-icon>home</mat-icon>
+    <span class="nav-caption">Home</span>
+  </a>
+
+  <a mat-list-item routerLink="/owner" (click)="onSidenavClose()">
+    <mat-icon>assignment_ind</mat-icon>
+    <span class="nav-caption">Invoices</span>
+  </a>
+
+  <a mat-list-item routerLink="/products" (click)="onSidenavClose()">
+    <mat-icon>account_balance</mat-icon>
+    <span class="nav-caption">Add Product</span>
+  </a>
+
+  <!-- PROFILE MENU -->
+  <mat-list-item [matMenuTriggerFor]="menu">
+    <mat-icon>unfold_more</mat-icon>
+    <span class="nav-caption">Profile</span>
+  </mat-list-item>
+
+</mat-nav-list>
+
+<!-- MENU -->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item (click)="onSidenavClose()">Profile</button>
+  <button mat-menu-item (click)="onSidenavClose()">Contacts</button>
+  <button mat-menu-item (click)="onSidenavClose()">Logout</button>
+</mat-menu>

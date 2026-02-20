@@ -9,6 +9,8 @@ import { HomeComponent } from './components/home/home.component';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { TaskComponent } from './components/task/task.component';
 import { TasksComponent } from './components/tasks/tasks.component';
+import { MaterialModule } from './material/material.module';
+import { SideNavListComponent } from './components/side-nav-list/side-nav-list.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { TasksComponent } from './components/tasks/tasks.component';
     HomeComponent,
     SideNavComponent,
     TaskComponent,
-    TasksComponent
+    TasksComponent,
+    SideNavListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
