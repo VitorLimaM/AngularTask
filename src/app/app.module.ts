@@ -11,6 +11,8 @@ import { TaskComponent } from './components/task/task.component';
 import { TasksComponent } from './components/tasks/tasks.component';
 import { MaterialModule } from './material/material.module';
 import { SideNavListComponent } from './components/side-nav-list/side-nav-list.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { SideNavListComponent } from './components/side-nav-list/side-nav-list.c
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
