@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,15 +12,10 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { DragDropModule } from '@angular/cdk/drag-drop';
 
-//MatNativeDateModule,,,
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
     MatSidenavModule,
@@ -29,13 +25,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatListModule,
     MatMenuModule,
     MatTabsModule,
-    FormsModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    BrowserAnimationsModule,
-    DragDropModule,
+    DragDropModule
   ],
   exports: [
     MatSidenavModule,
@@ -45,13 +39,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatListModule,
     MatMenuModule,
     MatTabsModule,
-    FormsModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatProgressSpinnerModule,
-    BrowserAnimationsModule,
-    DragDropModule,
+    DragDropModule
   ]
 })
 export class MaterialModule { }

@@ -12,6 +12,8 @@ import { TasksComponent } from './components/tasks/tasks.component';
 import { MaterialModule } from './material/material.module';
 import { SideNavListComponent } from './components/side-nav-list/side-nav-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SideNavComponent,
     TaskComponent,
     TasksComponent,
-    SideNavListComponent
+    SideNavListComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService, Task } from '../../services/task.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  tasks: Task[] = [];
+
+  constructor(private taskService: TaskService) { }
 
   ngOnInit(): void {
+    this.taskService.tasks$.subscribe((tasks: Task[]) => {
+      this.tasks = tasks;
+    });
   }
-
 }

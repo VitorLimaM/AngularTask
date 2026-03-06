@@ -1,1 +1,17 @@
-<p>home works!</p>
+<h2>All Tasks</h2>
+
+<div *ngIf="tasks.length > 0; else noTasks">
+  <mat-card *ngFor="let task of tasks" class="item">
+    <mat-card-header>
+      <mat-card-title>{{ task.title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ task.description }}</p>
+      <small>{{ task.list }}</small>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<ng-template #noTasks>
+  <p>No tasks available</p>
+</ng-template>
